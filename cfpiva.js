@@ -13,7 +13,6 @@ var formatReturn = function(result, data, callback) {
 ***************************************/
 cfpiva.controllaCF = function(codFisc, callback) {
     var validi, i, s, set1, set2, setpari, setdisp;
-    if( codFisc == '' )  return '';
     codFisc = codFisc.toUpperCase();
     if( codFisc.length != 16 )
         return formatReturn(false, 'La lunghezza del codice fiscale non è corretta: il codice fiscale dovrebbe essere lungo esattamente 16 caratteri.', callback);
@@ -41,7 +40,6 @@ cfpiva.controllaCF = function(codFisc, callback) {
 	Linguaggio: JavaScript
 ******************************************/
 cfpiva.controllaPIVA = function(piva, callback) {
-    if( piva == '' )  return '';
     if( piva.length != 11 )
         return formatReturn(false, 'La lunghezza della partita IVA non è corretta: la partita IVA dovrebbe essere lunga esattamente 11 caratteri.', callback);
     validi = "0123456789";
